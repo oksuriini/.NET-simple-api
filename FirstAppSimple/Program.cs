@@ -24,32 +24,36 @@ app.UseRouting();
 
 var snacks = new ConcurrentDictionary<string, Snack>();
 
-
 app.MapGet("/", () => "API has received your request");
 
-app.MapGet("/snacks", () => snacks);
+RouteGroupBuilder snackApi = app.MapGroup("/snack");
 
-app.MapGet("/snack/{id}", (string id) =>
+snackApi.MapGet("/", () => snacks);
+
+RouteGroupBuilder snackApiWithValid = snackApi.MapGroup("/")
+    .AddEndpointFilterFactory(ValidationHelper.ValidateIdFactory);
+
+snackApiWithValid.MapGet("/{id}", (string id) =>
 
     snacks.TryGetValue(id, out var snack)
         ? TypedResults.Ok(snack)
         : Results.Problem(statusCode: 404)
 ).AddEndpointFilter<IdValidationFilter>();
 
-app.MapPost("/snack/{id}", (Snack snack, string id) => snacks.TryAdd(id, snack) 
-    ? TypedResults.Created($"/snack/{id}", snack) 
+snackApiWithValid.MapPost("/{id}", (Snack snack, string id) => snacks.TryAdd(id, snack)
+    ? TypedResults.Created($"/snack/{id}", snack)
     : Results.ValidationProblem(new Dictionary<string, string[]>
     {
-        {"id", new[] {"A fruit with this id already exists"}}
-    })).AddEndpointFilterFactory(ValidationHelper.ValidateIdFactory);
+        { "id", new[] { "A fruit with this id already exists" } }
+    }));
 
-app.MapPut("/snack/{id}", (string id, Snack snack) =>
+snackApi.MapPut("/{id}", (string id, Snack snack) =>
 {
     snacks[id] = snack;
     return Results.NoContent();
 });
 
-app.MapDelete("/snack/{id}", (string id) =>
+snackApi.MapDelete("/{id}", (string id) =>
 {
     snacks.TryRemove(id, out Snack snack);
     if (snack == null)
@@ -114,7 +118,7 @@ class ValidationHelper
         return async (invocationContext) =>
         {
             var id = invocationContext.GetArgument<string>(idPosition.Value);
-            if (string.IsNullOrEmpty(id) || !id.StartsWith('f'))
+            if (string.IsNullOrEmpty(id) || !id.StartsWith('s'))
             {
                 return Results.ValidationProblem(
                     new Dictionary<string, string[]>
@@ -131,7 +135,7 @@ class IdValidationFilter : IEndpointFilter
     public async ValueTask<object?> InvokeAsync(EndpointFilterInvocationContext context, EndpointFilterDelegate next)
     {
         var id = context.GetArgument<string>(0);
-        if (string.IsNullOrEmpty(id) || !id.StartsWith('f'))
+        if (string.IsNullOrEmpty(id) || !id.StartsWith('s'))
         {
             return Results.ValidationProblem(
                 new Dictionary<string, string[]>
@@ -139,7 +143,6 @@ class IdValidationFilter : IEndpointFilter
                     { "id", new[] { "Snack ID must not be empty, and has to start with the letter 's'" } }
                 });
         }
-
         return await next(context);
     }
 }
