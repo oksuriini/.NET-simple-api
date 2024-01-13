@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "U6fVhk0m4nQq6160oVke0gDsAsDmZ9uw3ZKrLYMEO9Y=",
+  "Hash": "tP0JNMTOAeenXIppaOsLrgE08uqYER5dVwuJnSy38JM=",
   "Source": "FirstAppSimple",
   "BasePath": "_content/FirstAppSimple",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "/home/osku/Projects/RiderDirectories/FirstAppSimple/FirstAppSimple/wwwroot/example.png",
+      "Identity": "/home/osku/Projects/RiderDirectories/FirstAppSimple/FirstAppSimple/wwwroot/FunnyDoggie.jpg",
       "SourceId": "FirstAppSimple",
       "SourceType": "Discovered",
       "ContentRoot": "/home/osku/Projects/RiderDirectories/FirstAppSimple/FirstAppSimple/wwwroot/",
       "BasePath": "_content/FirstAppSimple",
-      "RelativePath": "example.png",
+      "RelativePath": "FunnyDoggie.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -33,7 +33,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/example.png"
+      "OriginalItemSpec": "wwwroot/FunnyDoggie.jpg"
     }
   ]
 }

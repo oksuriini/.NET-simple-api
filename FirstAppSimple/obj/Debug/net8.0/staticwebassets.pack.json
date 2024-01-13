@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "/home/osku/Projects/RiderDirectories/FirstAppSimple/FirstAppSimple/wwwroot/example.png",
-      "PackagePath": "staticwebassets/example.png"
+      "Id": "/home/osku/Projects/RiderDirectories/FirstAppSimple/FirstAppSimple/wwwroot/FunnyDoggie.jpg",
+      "PackagePath": "staticwebassets/FunnyDoggie.jpg"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.FirstAppSimple.Microsoft.AspNetCore.StaticWebAssets.props",
