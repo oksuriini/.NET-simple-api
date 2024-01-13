@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "78eYdLpg5ZHnDR1JQruOGukiu76SiCyLd8emjX6PNmiYadmo25uCLBx7HN1YLAKmf5gIssfNC9ViFi6CjvI5yA==",
+  "success": true,
+  "projectFilePath": "/home/osku/Projects/RiderDirectories/FirstAppSimple/FirstAppSimple/FirstAppSimple.csproj",
+  "expectedPackageFiles": [
+    "/home/osku/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.0/microsoft.aspnetcore.app.ref.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
