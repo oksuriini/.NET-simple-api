@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "/mzcJU45SUjGT4SmK1dKfqt+0k7E2bc7BGeBdKTGSVU=",
+  "Hash": "U6fVhk0m4nQq6160oVke0gDsAsDmZ9uw3ZKrLYMEO9Y=",
   "Source": "FirstAppSimple",
   "BasePath": "_content/FirstAppSimple",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "FirstAppSimple/wwwroot",
+      "Source": "FirstAppSimple",
+      "ContentRoot": "/home/osku/Projects/RiderDirectories/FirstAppSimple/FirstAppSimple/wwwroot/",
+      "BasePath": "_content/FirstAppSimple",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/home/osku/Projects/RiderDirectories/FirstAppSimple/FirstAppSimple/wwwroot/example.png",
+      "SourceId": "FirstAppSimple",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/osku/Projects/RiderDirectories/FirstAppSimple/FirstAppSimple/wwwroot/",
+      "BasePath": "_content/FirstAppSimple",
+      "RelativePath": "example.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/example.png"
+    }
+  ]
 }

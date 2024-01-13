@@ -23,3 +23,5 @@
 /home/osku/Projects/RiderDirectories/FirstAppSimple/FirstAppSimple/obj/Debug/net8.0/FirstAppSimple.pdb
 /home/osku/Projects/RiderDirectories/FirstAppSimple/FirstAppSimple/obj/Debug/net8.0/FirstAppSimple.genruntimeconfig.cache
 /home/osku/Projects/RiderDirectories/FirstAppSimple/FirstAppSimple/obj/Debug/net8.0/ref/FirstAppSimple.dll
+/home/osku/Projects/RiderDirectories/FirstAppSimple/FirstAppSimple/obj/Debug/net8.0/FirstAppSimple.sourcelink.json
+/home/osku/Projects/RiderDirectories/FirstAppSimple/FirstAppSimple/bin/Debug/net8.0/FirstAppSimple.staticwebassets.runtime.json
