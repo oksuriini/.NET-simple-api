@@ -11,6 +11,9 @@ builder.Services.AddHttpLogging(opts => opts.LoggingFields = HttpLoggingFields.R
 builder.Logging.AddFilter("Microsoft.AspNetCore.HttpLogging", LogLevel.Information);
 builder.Services.AddProblemDetails();
 
+builder.Services.AddHealthChecks();
+builder.Services.AddRazorPages();
+
 WebApplication app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
@@ -25,6 +28,10 @@ app.UseRouting();
 var snacks = new ConcurrentDictionary<string, Snack>();
 
 app.MapGet("/", () => "API has received your request");
+
+app.MapGet("/test", () => "Helloust there");
+app.MapHealthChecks("/healthz");
+app.MapRazorPages();
 
 RouteGroupBuilder snackApi = app.MapGroup("/snack");
 
